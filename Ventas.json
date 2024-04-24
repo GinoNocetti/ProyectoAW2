@@ -1,0 +1,259 @@
+[
+    {
+        "id": 1,
+        "id_usuario": 1,
+        "fecha": "2024-04-23T08:00:00",
+        "total": 149.99,
+        "dirección": "123 Calle Principal",
+        "productos": [
+            {
+                "id": 10,
+                "cantidad": 1,
+                "talle": ["x", "xs"]
+            },
+            {
+                "id": 14,
+                "cantidad": 1,
+                "talle": ["x"]
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "id_usuario": 2,
+        "fecha": "2024-04-22T10:30:00",
+        "total": 99.99,
+        "dirección": "456 Avenida Central",
+        "productos": [
+            {
+                "id": 6,
+                "cantidad": 1
+            },
+            {
+                "id": 17,
+                "cantidad": 1
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "id_usuario": 3,
+        "fecha": "2024-04-21T15:45:00",
+        "total": 279.98,
+        "dirección": "789 Calle Secundaria",
+        "productos": [
+            {
+                "id": 16,
+                "cantidad": 1
+            },
+            {
+                "id": 19,
+                "cantidad": 1
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "id_usuario": 4,
+        "fecha": "2024-04-20T13:20:00",
+        "total": 159.98,
+        "dirección": "567 Avenida Principal",
+        "productos": [
+            {
+                "id": 4,
+                "cantidad": 1
+            },
+            {
+                "id": 7,
+                "cantidad": 1
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "id_usuario": 5,
+        "fecha": "2024-04-19T11:10:00",
+        "total": 109.98,
+        "dirección": "890 Calle Secundaria",
+        "productos": [
+            {
+                "id": 2,
+                "cantidad": 1
+            },
+            {
+                "id": 18,
+                "cantidad": 1
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "id_usuario": 6,
+        "fecha": "2024-04-18T09:00:00",
+        "total": 189.98,
+        "dirección": "234 Avenida Central",
+        "productos": [
+            {
+                "id": 12,
+                "cantidad": 1
+            },
+            {
+                "id": 15,
+                "cantidad": 1
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "id_usuario": 7,
+        "fecha": "2024-04-17T14:30:00",
+        "total": 64.98,
+        "dirección": "678 Calle Principal",
+        "productos": [
+            {
+                "id": 3,
+                "cantidad": 1
+            },
+            {
+                "id": 8,
+                "cantidad": 1
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "id_usuario": 8,
+        "fecha": "2024-04-16T12:15:00",
+        "total": 124.97,
+        "dirección": "345 Avenida Central",
+        "productos": [
+            {
+                "id": 1,
+                "cantidad": 2
+            },
+            {
+                "id": 11,
+                "cantidad": 1
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "id_usuario": 9,
+        "fecha": "2024-04-15T16:50:00",
+        "total": 199.99,
+        "dirección": "456 Calle Principal",
+        "productos": [
+            {
+                "id": 5,
+                "cantidad": 1
+            },
+            {
+                "id": 9,
+                "cantidad": 1
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "id_usuario": 10,
+        "fecha": "2024-04-14T08:30:00",
+        "total": 139.98,
+        "dirección": "789 Calle Principal",
+        "productos": [
+            {
+                "id": 13,
+                "cantidad": 1
+            },
+            {
+                "id": 20,
+                "cantidad": 1
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "id_usuario": 11,
+        "fecha": "2024-04-13T11:00:00",
+        "total": 219.98,
+        "dirección": "567 Calle Secundaria",
+        "productos": [
+            {
+                "id": 8,
+                "cantidad": 2
+            },
+            {
+                "id": 15,
+                "cantidad": 1
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "id_usuario": 12,
+        "fecha": "2024-04-12T09:40:00",
+        "total": 169.97,
+        "dirección": "234 Avenida Principal",
+        "productos": [
+            {
+                "id": 8,
+                "cantidad": 1
+            },
+            {
+                "id": 14,
+                "cantidad": 2
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "id_usuario": 13,
+        "fecha": "2024-04-11T15:20:00",
+        "total": 79.98,
+        "dirección": "678 Calle Secundaria",
+        "productos": [
+            {
+                "id": 3,
+                "cantidad": 1
+            },
+            {
+                "id": 17,
+                "cantidad": 1
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "id_usuario": 14,
+        "fecha": "2024-04-10T14:00:00",
+        "total": 249.97,
+        "dirección": "890 Avenida Principal",
+        "productos": [
+            {
+                "id": 7,
+                "cantidad": 3
+            },
+            {
+                "id": 18,
+                "cantidad": 1
+            }
+        ]
+    },
+    {
+        "id": 15,
+        "id_usuario": 15,
+        "fecha": "2024-04-09T12:45:00",
+        "total": 169.97,
+        "dirección": "123 Calle Secundaria",
+        "productos": [
+            {
+                "id": 2,
+                "cantidad": 1
+            },
+            {
+                "id": 16,
+                "cantidad": 1
+            }
+        ]
+    }
+]

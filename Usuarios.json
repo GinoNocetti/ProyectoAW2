@@ -1,0 +1,93 @@
+[
+    {
+        "Id": 1,
+        "Nombre": "John",
+        "Apellido": "Smith",
+        "Email": "john.smith@gmail.com",
+        "Contraseña": "JohnApple123"
+    },
+    {
+        "Id": 2,
+        "Nombre": "Emma",
+        "Apellido": "Johnson",
+        "Email": "emma.johnson@gmail.com",
+        "Contraseña": "EmmaLion456"
+    },
+    {
+        "Id": 3,
+        "Nombre": "Michael",
+        "Apellido": "Williams",
+        "Email": "michael.williams@hotmail.com",
+        "Contraseña": "MichaelTiger789"
+    },
+    {
+        "Id": 4,
+        "Nombre": "Emily",
+        "Apellido": "Jones",
+        "Email": "emily.jones@hotmail.com",
+        "Contraseña": "EmilyBear123"
+    },
+    {
+        "Id": 5,
+        "Nombre": "James",
+        "Apellido": "Brown",
+        "Email": "james.brown@gmail.com",
+        "Contraseña": "JamesWolf456"
+    },
+    {
+        "Id": 6,
+        "Nombre": "Olivia",
+        "Apellido": "Davis",
+        "Email": "olivia.davis@hotmail.com",
+        "Contraseña": "OliviaEagle789"
+    },
+    {
+        "Id": 7,
+        "Nombre": "William",
+        "Apellido": "Miller",
+        "Email": "william.miller@gmail.com",
+        "Contraseña": "WilliamTurtle123"
+    },
+    {
+        "Id": 8,
+        "Nombre": "Sophia",
+        "Apellido": "Wilson",
+        "Email": "sophia.wilson@hotmail.com",
+        "Contraseña": "SophiaDolphin456"
+    },
+    {
+        "Id": 9,
+        "Nombre": "Alexander",
+        "Apellido": "Taylor",
+        "Email": "alexander.taylor@gmail.com",
+        "Contraseña": "AlexanderLion789"
+    },
+    {
+        "Id": 10,
+        "Nombre": "Ava",
+        "Apellido": "Anderson",
+        "Email": "ava.anderson@gmail.com",
+        "Contraseña": "AvaMonkey123"
+    },
+    {
+        "Id": 11,
+        "Nombre": "Daniel",
+        "Apellido": "Thomas",
+        "Email": "daniel.thomas@hotmail.com",
+        "Contraseña": "DanielSnake456"
+    },
+    {
+        "Id": 12,
+        "Nombre": "Mia",
+        "Apellido": "Martinez",
+        "Email": "mia.martinez@hotmail.com",
+        "Contraseña": "MiaElephant789"
+    },
+    {
+        "Id": 13,
+        "Nombre": "Matthew",
+        "Apellido": "Hernandez",
+        "Email": "matthew.hernandez@hotmail.com",
+        "Contraseña": "MatthewTiger123"
+    }
+]

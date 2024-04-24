@@ -1,0 +1,162 @@
+[
+    {
+        "id": 1,
+        "nombre": "Camiseta básica de manga corta",
+        "desc": "Camiseta básica de algodón suave para uso diario.",
+        "precio": 14.99,
+        "categoria": "Prendas superiores",
+        "imagen": "url_de_la_imagen"
+    },
+    {
+        "id": 2,
+        "nombre": "Suéter de punto grueso",
+        "desc": "Suéter de punto grueso y cálido para los días de invierno.",
+        "precio": 39.99,
+        "categoria": "Prendas superiores",
+        "imagen": "url_de_la_imagen"
+    },
+    {
+        "id": 3,
+        "nombre": "Chaqueta de cuero sintético",
+        "desc": "Chaqueta de cuero sintético elegante y moderna.",
+        "precio": 59.99,
+        "categoria": "Prendas superiores",
+        "imagen": "url_de_la_imagen"
+    },
+    {
+        "id": 4,
+        "nombre": "Jeans ajustados",
+        "desc": "Jeans ajustados de denim elástico para un look moderno.",
+        "precio": 49.99,
+        "categoria": "Prendas inferiores",
+        "imagen": "url_de_la_imagen"
+    },
+    {
+        "id": 5,
+        "nombre": "Pantalones cargo",
+        "desc": "Pantalones cargo cómodos y funcionales con múltiples bolsillos.",
+        "precio": 34.99,
+        "categoria": "Prendas inferiores",
+        "imagen": "url_de_la_imagen"
+    },
+    {
+        "id": 6,
+        "nombre": "Shorts de mezclilla",
+        "desc": "Shorts de mezclilla desgastados para un estilo casual de verano.",
+        "precio": 24.99,
+        "categoria": "Prendas inferiores",
+        "imagen": "url_de_la_imagen"
+    },
+    {
+        "id": 7,
+        "nombre": "Collar de plata con colgante de corazón",
+        "desc": "Collar de plata con colgante de corazón, ideal para regalos.",
+        "precio": 29.99,
+        "categoria": "Joyería",
+        "imagen": "url_de_la_imagen"
+    },
+    {
+        "id": 8,
+        "nombre": "Pulsera de cuero trenzado",
+        "desc": "Pulsera de cuero trenzado con cierre magnético.",
+        "precio": 19.99,
+        "categoria": "Joyería",
+        "imagen": "url_de_la_imagen"
+    },
+    {
+        "id": 9,
+        "nombre": "Anillo de compromiso con diamante",
+        "desc": "Anillo de compromiso con diamante de corte princesa.",
+        "precio": 599.99,
+        "categoria": "Joyería",
+        "imagen": "url_de_la_imagen"
+    },
+    {
+        "id": 10,
+        "nombre": "Camisa de vestir de manga larga",
+        "desc": "Camisa de vestir de manga larga con cuello clásico.",
+        "precio": 44.99,
+        "categoria": "Prendas superiores",
+        "imagen": "url_de_la_imagen"
+    },
+    {
+        "id": 11,
+        "nombre": "Leggings de yoga de alta cintura",
+        "desc": "Leggings de yoga de alta cintura con tejido transpirable.",
+        "precio": 29.99,
+        "categoria": "Prendas inferiores",
+        "imagen": "url_de_la_imagen"
+    },
+    {
+        "id": 12,
+        "nombre": "Collar de perlas de agua dulce",
+        "desc": "Collar de perlas de agua dulce con cierre de plata.",
+        "precio": 79.99,
+        "categoria": "Joyería",
+        "imagen": "url_de_la_imagen"
+    },
+    {
+        "id": 13,
+        "nombre": "Blusa de gasa estampada",
+        "desc": "Blusa de gasa estampada con detalle de lazo en el cuello.",
+        "precio": 34.99,
+        "categoria": "Prendas superiores",
+        "imagen": "url_de_la_imagen"
+    },
+    {
+        "id": 14,
+        "nombre": "Jeans de cintura alta",
+        "desc": "Jeans de cintura alta con detalle de rasgado en las rodillas.",
+        "precio": 54.99,
+        "categoria": "Prendas inferiores",
+        "imagen": "url_de_la_imagen"
+    },
+    {
+        "id": 15,
+        "nombre": "Aretes de oro con diamantes",
+        "desc": "Aretes de oro con diamantes brillantes en engarces de cuatro garras.",
+        "precio": 499.99,
+        "categoria": "Joyería",
+        "imagen": "url_de_la_imagen"
+    },
+    {
+        "id": 16,
+        "nombre": "Vestido de fiesta con lentejuelas",
+        "desc": "Vestido de fiesta con lentejuelas y escote pronunciado en la espalda.",
+        "precio": 89.99,
+        "categoria": "Prendas superiores",
+        "imagen": "url_de_la_imagen"
+    },
+    {
+        "id": 17,
+        "nombre": "Pantalones cortos deportivos",
+        "desc": "Pantalones cortos deportivos con bolsillos laterales y cintura elástica.",
+        "precio": 19.99,
+        "categoria": "Prendas inferiores",
+        "imagen": "url_de_la_imagen"
+    },
+    {
+        "id": 18,
+        "nombre": "Collar de cadena de plata",
+        "desc": "Collar de cadena de plata clásico para uso diario.",
+        "precio": 39.99,
+        "categoria": "Joyería",
+        "imagen": "url_de_la_imagen"
+    },
+    {
+        "id": 19,
+        "nombre": "Blazer de algodón",
+        "desc": "Blazer de algodón con diseño a cuadros y cierre de botón.",
+        "precio": 69.99,
+        "categoria": "Prendas superiores",
+        "imagen": "url_de_la_imagen"
+    },
+    {
+        "id": 20,
+        "nombre": "Falda plisada midi",
+        "desc": "Falda plisada midi con cintura elástica y estampado floral.",
+        "precio": 49.99,
+        "categoria": "Prendas inferiores",
+        "imagen": "url_de_la_imagen"
+    }
+]
