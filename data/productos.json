@@ -5,7 +5,7 @@
     "desc": "Camiseta básica de algodón suave para uso diario.",
     "precio": 14.99,
     "categoria": "Prendas superiores",
-    "imagen": "url_de_la_imagen",
+    "imagen": "../assets/ImagendeEjemplo.png",
     "talle": [
       "s",
       "m",
@@ -19,7 +19,7 @@
     "desc": "Suéter de punto grueso y cálido para los días de invierno.",
     "precio": 39.99,
     "categoria": "Prendas superiores",
-    "imagen": "url_de_la_imagen",
+    "imagen": "../assets/ImagendeEjemplo.png",
     "talle": [
       "s",
       "m",
@@ -32,7 +32,7 @@
     "desc": "Chaqueta de cuero sintético elegante y moderna.",
     "precio": 59.99,
     "categoria": "Prendas superiores",
-    "imagen": "url_de_la_imagen",
+    "imagen": "../assets/ImagendeEjemplo.png",
     "talle": [
       "m",
       "l",
@@ -45,7 +45,7 @@
     "desc": "Jeans ajustados de denim elástico para un look moderno.",
     "precio": 59.99,
     "categoria": "Prendas inferiores",
-    "imagen": "url_de_la_imagen",
+    "imagen": "../assets/ImagendeEjemplo.png",
     "talle": [
       "xs",
       "s",
@@ -59,7 +59,7 @@
     "desc": "Pantalones cargo cómodos y funcionales con múltiples bolsillos.",
     "precio": 34.99,
     "categoria": "Prendas inferiores",
-    "imagen": "url_de_la_imagen",
+    "imagen": "../assets/ImagendeEjemplo.png",
     "talle": [
       "s",
       "m",
@@ -73,7 +73,7 @@
     "desc": "Shorts de mezclilla desgastados para un estilo casual de verano.",
     "precio": 24.99,
     "categoria": "Prendas inferiores",
-    "imagen": "url_de_la_imagen",
+    "imagen": "../assets/ImagendeEjemplo.png",
     "talle": [
       "xs",
       "s",
@@ -86,7 +86,7 @@
     "desc": "Collar de plata con colgante de corazón, ideal para regalos.",
     "precio": 29.99,
     "categoria": "Joyería",
-    "imagen": "url_de_la_imagen",
+    "imagen": "../assets/ImagendeEjemplo.png",
     "talle": [
       "s",
       "m"
@@ -98,7 +98,7 @@
     "desc": "Pulsera de cuero trenzado con cierre magnético.",
     "precio": 19.99,
     "categoria": "Joyería",
-    "imagen": "url_de_la_imagen",
+    "imagen": "../assets/ImagendeEjemplo.png",
     "talle": [
       "xs",
       "s",
@@ -112,7 +112,7 @@
     "desc": "Anillo de compromiso con diamante de corte princesa.",
     "precio": 599.99,
     "categoria": "Joyería",
-    "imagen": "url_de_la_imagen",
+    "imagen": "../assets/ImagendeEjemplo.png",
     "talle": [
       "l",
       "xl"
@@ -124,7 +124,7 @@
     "desc": "Camisa de vestir de manga larga con cuello clásico.",
     "precio": 44.99,
     "categoria": "Prendas superiores",
-    "imagen": "url_de_la_imagen",
+    "imagen": "../assets/ImagendeEjemplo.png",
     "talle": [
       "s",
       "m",
@@ -137,7 +137,7 @@
     "desc": "Leggings de yoga de alta cintura con tejido transpirable.",
     "precio": 29.99,
     "categoria": "Prendas inferiores",
-    "imagen": "url_de_la_imagen",
+    "imagen": "../assets/ImagendeEjemplo.png",
     "talle": [
       "s",
       "m",
@@ -150,7 +150,7 @@
     "desc": "Collar de perlas de agua dulce con cierre de plata.",
     "precio": 79.99,
     "categoria": "Joyería",
-    "imagen": "url_de_la_imagen",
+    "imagen": "../assets/ImagendeEjemplo.png",
     "talle": [
       "xs",
       "s",
@@ -163,7 +163,7 @@
     "desc": "Blusa de gasa estampada con detalle de lazo en el cuello.",
     "precio": 34.99,
     "categoria": "Prendas superiores",
-    "imagen": "url_de_la_imagen",
+    "imagen": "../assets/ImagendeEjemplo.png",
     "talle": [
       "s",
       "m",
@@ -177,7 +177,7 @@
     "desc": "Jeans de cintura alta con detalle de rasgado en las rodillas.",
     "precio": 54.99,
     "categoria": "Prendas inferiores",
-    "imagen": "url_de_la_imagen",
+    "imagen": "../assets/ImagendeEjemplo.png",
     "talle": [
       "xs",
       "s",
@@ -190,7 +190,7 @@
     "desc": "Aretes de oro con diamantes brillantes en engarces de cuatro garras.",
     "precio": 499.99,
     "categoria": "Joyería",
-    "imagen": "url_de_la_imagen",
+    "imagen": "../assets/ImagendeEjemplo.png",
     "talle": [
       "s",
       "m",
@@ -204,7 +204,7 @@
     "desc": "Vestido de fiesta con lentejuelas y escote pronunciado en la espalda.",
     "precio": 89.99,
     "categoria": "Prendas superiores",
-    "imagen": "url_de_la_imagen",
+    "imagen": "../assets/ImagendeEjemplo.png",
     "talle": [
       "s",
       "m",
@@ -217,7 +217,7 @@
     "desc": "Pantalones cortos deportivos con bolsillos laterales y cintura elástica.",
     "precio": 19.99,
     "categoria": "Prendas inferiores",
-    "imagen": "url_de_la_imagen",
+    "imagen": "../assets/ImagendeEjemplo.png",
     "talle": [
       "m",
       "l",
@@ -230,7 +230,7 @@
     "desc": "Collar de cadena de plata clásico para uso diario.",
     "precio": 49.99,
     "categoria": "Joyería",
-    "imagen": "url_de_la_imagen",
+    "imagen": "../assets/ImagendeEjemplo.png",
     "talle": [
       "xs",
       "s",
@@ -244,7 +244,7 @@
     "desc": "Blazer de algodón con diseño a cuadros y cierre de botón.",
     "precio": 69.99,
     "categoria": "Prendas superiores",
-    "imagen": "url_de_la_imagen",
+    "imagen": "../assets/ImagendeEjemplo.png",
     "talle": [
       "s",
       "m",
@@ -257,11 +257,11 @@
     "desc": "Falda plisada midi con cintura elástica y estampado floral.",
     "precio": 49.99,
     "categoria": "Prendas inferiores",
-    "imagen": "url_de_la_imagen",
+    "imagen": "../assets/ImagendeEjemplo.png",
     "talle": [
       "m",
       "l",
       "xl"
     ]
-  }
+  } 
 ]

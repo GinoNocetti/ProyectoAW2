@@ -1,5 +1,12 @@
 [
   {
+    "Id": 1,
+    "Nombre": "Gino",
+    "Apellido": "Anria",
+    "Email": "ginonocetti@gmail.com",
+    "Contraseña": "gino123"
+  },
+  {
     "Id": 2,
     "Nombre": "Emma",
     "Apellido": "Clark",
@@ -82,5 +89,19 @@
     "Apellido": "Hernandez",
     "Email": "matthew.hernandez@hotmail.com",
     "Contraseña": "MatthewTiger123"
+  },
+  {
+    "Id": 14,
+    "Nombre": "Juancho",
+    "Apellido": "Peralta",
+    "Email": "JuanchoPeralta123@gmail.com",
+    "Contraseña": "Juancho123"
+  },
+  {
+    "Id": 15,
+    "Nombre": "Juan",
+    "Apellido": "Perez",
+    "Email": "juanperez@gmail.com",
+    "Contraseña": "juan123"
   }
 ]

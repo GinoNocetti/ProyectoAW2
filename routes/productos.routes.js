@@ -8,6 +8,24 @@ const router = Router()
 const fileProductos = await readFile('./data/productos.json', 'utf-8') 
 const productosItems = JSON.parse(fileProductos) 
 
+router.get('/todos', (req, res) => {
+    try{
+        res.status(200).json(productosItems);
+    }catch(error){
+        res.status(500).json({ error: 'Error al leer los datos de los productos' })
+    }
+});
+
+router.get('/categoria/:categoria', async (req, res) => {
+    const categoria = req.params.categoria;
+    try {
+        const productosFiltrados = productosItems.filter(producto => producto.categoria === categoria);
+        res.status(200).json(productosFiltrados);
+    } catch (error) {
+        res.status(500).json({ error: 'Error al filtrar los productos por categoría' });
+    }
+});
+
 router.get('/porID/:id', (req, res) => {
     const id = parseInt(req.params.id);
 
@@ -29,7 +47,6 @@ router.get('/porPrecio/:precio', (req, res) => {
         res.status(400).json(`No se encontraron productos con el precio ${precio}`);
     }
 });
- 
 
 router.post('/BuscarProducto', (req, res) => {
     const nombreProducto = req.body.nombre;
