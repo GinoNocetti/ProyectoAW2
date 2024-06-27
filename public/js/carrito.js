@@ -53,12 +53,12 @@ document.getElementById('comprarProductos').addEventListener('click', async () =
     const cartData = JSON.parse(localStorage.getItem('cart')) || []; 
 
     if (!userId) {
-        alert('Usuario no identificado. Por favor, inicia sesión.');
+        mostrarMensaje('Usuario no identificado. Por favor, inicia sesión.', '#e74c3c', 5000);
         return;
     }
 
     if (!direccion) {
-        alert('Por favor, ingresa tu dirección');
+        mostrarMensaje('Por favor, ingresa tu dirección', '#e74c3c', 2000);
         return;
     }
 
