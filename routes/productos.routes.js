@@ -5,6 +5,7 @@ import { get_producto_byId } from '../utils/pruductos.js'
 const router = Router()
 
 /* Rutas de usuarios */
+
 const fileProductos = await readFile('./data/productos.json', 'utf-8') 
 const productosItems = JSON.parse(fileProductos) 
 

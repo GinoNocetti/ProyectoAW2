@@ -14,7 +14,6 @@ const app = express()
 
 const puerto = process.env.Puerto || 3000
 
-
 app.use(cors());
 
 app.use(express.json())
@@ -22,9 +21,9 @@ app.use(express.json())
 app.listen(puerto, () =>{
     console.log(`Servidor levantado en el puerto ${puerto}`)
 })
+
 /* Levantar el Front */
 app.use(express.static('./public/'))
-
 
 /* Rutas */
 app.use('/usuarios', usuarioRouter)

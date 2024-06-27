@@ -1,8 +1,6 @@
-// public/js/categoria.js
-
 import { CustomCard } from '../components/card.js';
 import { addToCart } from '../utils/cart.controller.js';
-/*Desde aquí*/
+import { mostrarMensaje } from '../components/mensaje.js';
 
 const obtenerProductos = async () => {
   const productos = await fetch('http://localhost:5000/productos/todos', {
@@ -22,34 +20,6 @@ const obtenerProductos = async () => {
 
   return productos;
 };
-
-/*document.addEventListener('DOMContentLoaded', async () => {
-  const productosContainer = document.getElementById('productos-container');
-
-  try {
-      const productos = await obtenerProductos();
-      console.log("Productos recibidos:", productos); // Añade este console.log
-
-      productos.forEach(producto => {
-          const { id, nombre, desc, precio, imagen, talle } = producto;
-
-          const cardHtml = CustomCard({
-              img: imagen,
-              title: nombre,
-              desc: desc,
-              precio: precio,
-              productId: id,
-              talles: talle
-          });
-
-          productosContainer.innerHTML += cardHtml;
-      });
-  } catch (error) {
-      console.error('Error al obtener los productos:', error);
-  }
-});*/
-
-
 
 const mostrarProductos = (productos) => {
   const contenedor = document.getElementById('productos-container'); // Ajusta según el ID del contenedor
@@ -101,5 +71,6 @@ document.getElementById('productos-container').addEventListener('click', (event)
 
       addToCart(product);
       console.log('¡Producto agregado!');
+      mostrarMensaje('Producto agregado al carrito', '#2ecc71', 2000);
   }
 });

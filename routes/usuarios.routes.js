@@ -35,13 +35,13 @@ router.get('/porNombre/:nombre', async (req, res) => {
     }
 });
 
-
 router.post('/login', async (req, res) => {
+    const usuariosItems = await leerJsonUsuarios()
     const correo = req.body.Email;
     const contraseña = req.body.Contraseña;
-
+    
     try {
-        const usuariosItems = await leerJsonUsuarios()
+        //const usuariosItems = await leerJsonUsuarios()
 
         const result = usuariosItems.find(e => e.Email === correo && e.Contraseña === contraseña);
         
@@ -54,10 +54,10 @@ router.post('/login', async (req, res) => {
                 status: true
             }
             res.status(200).json(data)
-            /*res.status(200).json(`¡Bienvenido ${result.Nombre} ${result.Apellido}!`);*/
+            //res.status(200).json(`¡Bienvenido ${result.Nombre} ${result.Apellido}!`);
         } else {
             res.status(400).json({status:false})
-            /*res.status(400).json(`El correo electrónico o la contraseña son incorrectos`);*/
+            //res.status(400).json(`El correo electrónico o la contraseña son incorrectos`);
         }
     }catch (error){
         res.status(500).json(`Error interno en el servidor`);

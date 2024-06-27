@@ -1,7 +1,8 @@
 import { CustomCard } from "../components/card.js";
 import { addToCart, getCartData } from "../utils/cart.controller.js";
+import { mostrarMensaje } from '../components/mensaje.js';
 
-document.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
     const selectCategoria = document.getElementById('selectCategoria');
     const btnFiltrar = document.getElementById('btnFiltrar');
     const productosContainer = document.getElementById('json-container');
@@ -40,43 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 });
-/*const AgregarProductomsj = () => {
-    const mensaje = document.createElement('div');
-    mensaje.classList.add('mensaje-agregado');
-    mensaje.textContent = 'Producto agregado al carrito';
-  
-    document.body.appendChild(mensaje);
-  
-    setTimeout(() => {
-      mensaje.remove();
-    }, 2000);
-};*/
-
-const AgregarProductomsj = () => {
-    const mensaje = document.createElement('div');
-    mensaje.classList.add('mensaje-agregado');
-    mensaje.textContent = 'Producto agregado al carrito';
-
-    // Estilos para el mensaje (opcional, para que se vea bien)
-    mensaje.style.position = 'fixed';
-    mensaje.style.bottom = '20px'; // Separación desde el límite inferior
-    mensaje.style.left = '50%';
-    mensaje.style.transform = 'translateX(-50%)'; // Centrar horizontalmente
-    mensaje.style.backgroundColor = '#2ecc71';
-    mensaje.style.color = 'white';
-    mensaje.style.padding = '10px';
-    mensaje.style.borderRadius = '5px';
-    mensaje.style.zIndex = '1000';
-    mensaje.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)'; // Sombra opcional
-
-    document.body.appendChild(mensaje);
-
-    setTimeout(() => {
-        mensaje.remove();
-    }, 2000);
-};
-
-/*Nuevo codigo*/
 
 document.getElementById('json-container').addEventListener('click', (event) => {
     const miBoton = event.target.closest('.btn-carrito');
@@ -104,16 +68,6 @@ document.getElementById('json-container').addEventListener('click', (event) => {
 
         addToCart(product);
         console.log('¡Producto agregado!');
-        AgregarProductomsj(product);
+        mostrarMensaje('Producto agregado al carrito', '#2ecc71', 2000);
     }
 });
-
-/*Hasta aquí */
-
-/*document.getElementById('json-container').addEventListener('click', (event) => {
-    const miBoton = event.target.closest('.btn-carrito');
-    if (miBoton) {
-        console.log("Artículo/s agregados al carrito");
-        AgregarProductomsj();
-    }
-});*/

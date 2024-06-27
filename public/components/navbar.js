@@ -1,5 +1,4 @@
 const url = 'http://127.0.0.1:5000/pages/';
-/*const url = 'http://localhost:5000/pages/';*/
 
 const NavElements = [
     { title: 'Prendas Superiores', link: `${url}Categoria1.html` },
@@ -35,7 +34,3 @@ export const navbarComponent = `
     </div>
 </nav>
 `;
-
-/*document.addEventListener("DOMContentLoaded", () => {
-    document.getElementById("navbar-container").innerHTML = navbarComponent;
-});*/

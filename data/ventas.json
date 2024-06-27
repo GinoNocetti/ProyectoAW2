@@ -372,5 +372,150 @@
         ]
       }
     ]
+  },
+  {
+    "id": 16,
+    "id_usuario": 10,
+    "fecha": "2024-04-11T14:00:00",
+    "total": 299.97,
+    "dirección": "123 Calle Ejemplo",
+    "productos": [
+      {
+        "id": 8,
+        "cantidad": 2,
+        "talles": [
+          {
+            "talle": "m",
+            "cant": 1
+          },
+          {
+            "talle": "l",
+            "cant": 1
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "cantidad": 1,
+        "talles": [
+          {
+            "talle": "s",
+            "cant": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "id_usuario": 10,
+    "fecha": "2024-04-11T14:00:00",
+    "total": 299.97,
+    "dirección": "123 Calle Ejemplo",
+    "productos": [
+      {
+        "id": 8,
+        "cantidad": 2,
+        "talles": [
+          {
+            "talle": "m",
+            "cant": 1
+          },
+          {
+            "talle": "l",
+            "cant": 1
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "cantidad": 1,
+        "talles": [
+          {
+            "talle": "s",
+            "cant": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "id_usuario": null,
+    "fecha": "2024-06-25T23:50:03.100Z",
+    "total": 114.94,
+    "dirección": "hola",
+    "productos": [
+      {
+        "id": "1",
+        "cantidad": 3,
+        "talles": [
+          {
+            "talle": "s",
+            "cant": 1
+          },
+          {
+            "talle": "xl",
+            "cant": 2
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "cantidad": 1,
+        "talles": [
+          {
+            "talle": "s",
+            "cant": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "id_usuario": 7,
+    "fecha": "2024-06-26T00:08:46.195Z",
+    "total": 559.86,
+    "dirección": "Prueba123",
+    "productos": [
+      {
+        "id": "2",
+        "cantidad": 6,
+        "talles": [
+          {
+            "talle": "s",
+            "cant": 1
+          },
+          {
+            "talle": "m",
+            "cant": 2
+          },
+          {
+            "talle": "l",
+            "cant": 3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "id_usuario": 1,
+    "fecha": "2024-06-27T02:36:58.956Z",
+    "total": "14.99",
+    "dirección": "Prueba123",
+    "productos": [
+      {
+        "id": "1",
+        "cantidad": 1,
+        "talles": [
+          {
+            "talle": "s",
+            "cant": 1
+          }
+        ]
+      }
+    ]
   }
 ]
