@@ -3,7 +3,7 @@ import { readFile  } from 'fs/promises'
 const fileVentas= await readFile('./data/ventas.json', 'utf-8') 
 const VentasItems = JSON.parse(fileVentas) 
 
-export const get_ventas_byId = (Id)=>{
+export const get_ventas_byId = (Id, VentasItems)=>{
     return VentasItems.find(e => e.id === Id)
 }
 

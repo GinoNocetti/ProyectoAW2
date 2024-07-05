@@ -10,17 +10,49 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
-<body>
+<body style="background-color: #272727;">
     <header id="navbar-container">
 
     </header>
-    <h1>Bienvenido al home</h1>
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="card mb-4" style="background-color: #999999;">
+                    <div class="card-header text-center" style="background-color: #333333; color: white;">
+                        <h2>¡Bienvenidos al Home!</h2>
+                    </div>
+                </div>
+                
+    
+                <div style="margin-top: 20px;"></div>
+    
+                <div class="card mb-4" style="background-color: #999999;">
+                    <div class="card-header text-center" style="background-color: #333333; color: white;">
+                        <h4>¿Que artículos quiere filtrar?</h4>
+                    </div>
+                    <div class="card mb-4" style="background-color: #666666;">
+                        <div class="card-body text-center">
+                            <button id="btnTodos" class="btn btn-outline-light m-2">Todos los productos</button>
+                            <button id="btnPrendasSuperiores" class="btn btn-outline-light m-2">Prendas superiores</button>
+                            <button id="btnPrendasInferiores" class="btn btn-outline-light m-2">Prendas inferiores</button>
+                            <button id="btnJoyeria" class="btn btn-outline-light m-2">Joyería</button>
+                        </div>
+                    </div>
+                    
+                    <div style="padding: 20px;">
+                        <section>
+                            <div id="mensaje" class="alert alert-success text-center" style="margin-bottom: 20px; display: none;" role="alert">
+                                
+                            </div>
+                            <div id="productos-container" class="flex-container d-flex flex-wrap justify-content-start">                                
 
-    <section class="mt-4">       
-        <div id="productos-container" class="d-flex flex-wrap justify-content-center">
-
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
 
     <script type="module" src="../js/home.js"></script>
     <script type="module" src="../js/categoria.js"></script>

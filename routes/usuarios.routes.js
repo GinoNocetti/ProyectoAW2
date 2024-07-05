@@ -1,6 +1,8 @@
 import { Router } from 'express'
 import { readFile, writeFile } from 'fs/promises'
-import { get_user_byId, leerJsonUsuarios } from '../utils/usuarios.js'
+import { get_user_byId, leerJsonUsuarios} from '../utils/usuarios.js'
+import { leerJsonVentas } from '../utils/ventas.js'
+import bcrypt from 'bcrypt';
 
 const router = Router()
 
@@ -10,6 +12,12 @@ const usuariosItems = JSON.parse(fileUsuarios)
 
 const fileVentas= await readFile('./data/ventas.json', 'utf-8') 
 const VentasItems = JSON.parse(fileVentas) */
+
+const obtenerSiguienteId = async () => {
+    const usuariosItems = await leerJsonUsuarios();
+    const maxId = usuariosItems.reduce((max, user) => (user.Id > max ? user.Id : max), 0);
+    return maxId + 1;
+};
 
 router.get('/porID/:Id', async (req, res)=>{
     const id = parseInt(req.params.Id)
@@ -36,52 +44,49 @@ router.get('/porNombre/:nombre', async (req, res) => {
 });
 
 router.post('/login', async (req, res) => {
-    const usuariosItems = await leerJsonUsuarios()
-    const correo = req.body.Email;
-    const contraseña = req.body.Contraseña;
-    
-    try {
-        //const usuariosItems = await leerJsonUsuarios()
-
-        const result = usuariosItems.find(e => e.Email === correo && e.Contraseña === contraseña);
-        
-        if (result) {
-            const data = {
-                Id: result.Id,
-                Nombre: result.Nombre,
-                Apellido: result.Apellido,
-                Correo: result.Email,
-                status: true
-            }
-            res.status(200).json(data)
-            //res.status(200).json(`¡Bienvenido ${result.Nombre} ${result.Apellido}!`);
-        } else {
-            res.status(400).json({status:false})
-            //res.status(400).json(`El correo electrónico o la contraseña son incorrectos`);
-        }
-    }catch (error){
-        res.status(500).json(`Error interno en el servidor`);
-    }
-    
-});
-
-router.post('/agregarUsuario', async (req, res) => {
-    const { Id, Nombre, Apellido, Email, Contraseña } = req.body;
+    const { Email, Contraseña } = req.body;
 
     try {
         const usuariosItems = await leerJsonUsuarios();
+        const usuario = usuariosItems.find(user => user.Email === Email);
 
-        const usuarioExistente = usuariosItems.find(u => u.Id === Id || u.Email === Email);
-        if (usuarioExistente) {
-            return res.status(400).json({ status: false, message: 'El usuario ya existe.' });
+        if (usuario) {        
+            const match = await bcrypt.compare(Contraseña, usuario.Contraseña);
+
+            if (match) {
+                const data = {
+                    Id: usuario.Id,
+                    Nombre: usuario.Nombre,
+                    Apellido: usuario.Apellido,
+                    status: true
+                };
+                res.status(200).json(data);
+            } else {
+                res.status(401).json({ message: 'Correo o contraseña incorrectos' });
+            }
+        } else {
+            res.status(401).json({ message: 'Correo o contraseña incorrectos' });
         }
+    } catch (error) {
+        res.status(500).json({ error: 'Error al intentar iniciar sesión' });
+    }
+});
+
+router.post('/agregarUsuario', async (req, res) => {
+    const { Nombre, Apellido, Email, Contraseña } = req.body;
+
+    try {
+        const usuariosItems = await leerJsonUsuarios();
+        const hashedPassword = await bcrypt.hash(Contraseña, 10);
+
+        const nuevoId = await obtenerSiguienteId();
 
         const nuevoUsuario = {
-            Id,
+            Id: nuevoId,
             Nombre,
             Apellido,
             Email,
-            Contraseña
+            Contraseña: hashedPassword
         };
         usuariosItems.push(nuevoUsuario);
 
@@ -89,6 +94,7 @@ router.post('/agregarUsuario', async (req, res) => {
 
         res.status(201).json({ status: true, message: 'Usuario agregado correctamente.', usuario: nuevoUsuario });
     } catch (error) {
+        console.error('Error al agregar usuario:', error);
         res.status(500).json({ status: false, message: 'Error interno del servidor.' });
     }
 });
@@ -115,6 +121,7 @@ router.delete('/borrarUsuario/:userID', async (req, res)=>{
     const user_id = parseInt(req.params.userID)
     try{
         const usuariosItems = await leerJsonUsuarios();
+        const VentasItems = await leerJsonVentas();
         const index = usuariosItems.findIndex(e => e.Id === user_id)
         if(index !== -1){
             usuariosItems.splice(index, 1)

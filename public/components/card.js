@@ -23,7 +23,7 @@ export const CustomCard = ({ img, title, desc, precio, productId, talles }) => {
                     </div>
                     <div class="d-flex justify-content-between align-items-center mt-3">
                         <h5 class="card-price" style="color: white;">$ ${precio}</h5>
-                        <button class="btn btn-primary btn-carrito">Agregar al carrito</button>
+                        <button class="btn btn btn-outline-light m-2 btn-carrito">Agregar al carrito</button>
                     </div>
                 </div>
             </div>
@@ -59,17 +59,3 @@ export const CarritoCard = ({ image, name, price, quantity, productId, talle, in
         </div>
     `;
 };
-
-// Ejemplo de uso:
-/*const cardData = {
-    img: 'ruta/imagen.jpg',
-    title: 'Producto de ejemplo',
-    precio: 20.00,
-    cantidad: 1,
-    productId: 'producto-1',
-    talles: ['s', 'm', 'l', 'xl'] // Ejemplo de talles disponibles
-};
-
-const carritoCardHTML = CarritoCard(cardData);
-console.log(carritoCardHTML);
-*/

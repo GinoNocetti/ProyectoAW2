@@ -1,8 +1,8 @@
 [
   {
-    "Id": 1,
+    "Id": 0,
     "Nombre": "Gino",
-    "Apellido": "Anria",
+    "Apellido": "Nocetti",
     "Email": "ginonocetti@gmail.com",
     "Contraseña": "gino123"
   },
@@ -100,8 +100,29 @@
   {
     "Id": 15,
     "Nombre": "Juan",
-    "Apellido": "Perez",
-    "Email": "juanperez@gmail.com",
-    "Contraseña": "juan123"
+    "Apellido": "Pérez",
+    "Email": "juan.perez@example.com",
+    "Contraseña": "$2b$10$vfXc.M.guSkqBp6MCw5NluBAWO.c6yedFtBbEFjnQF3exTYFYw.2a"
+  },
+  {
+    "Id": 16,
+    "Nombre": "María",
+    "Apellido": "González",
+    "Email": "maria.gonzalez@example.com",
+    "Contraseña": "$2b$10$482r9awQVIWI7xrs4ZEbFekWVgfeSOPZ2ST.Jd14MvrbDpsSvInv2"
+  },
+  {
+    "Id": 17,
+    "Nombre": "Emilia",
+    "Apellido": "Andrada",
+    "Email": "Emilia_Andrada@hotmail.com",
+    "Contraseña": "$2b$10$7iqKX5C58TUZ1bZBalqeP.FEvVhT6rNDDSu3pxpw5Oexfu1KQzGM."
+  },
+  {
+    "Id": 18,
+    "Nombre": "Gonzalo",
+    "Apellido": "Pereyra",
+    "Email": "gonzalopereyna123@gmail.com",
+    "Contraseña": "$2b$10$/g0BzvGPxj3s91LuYNr6AuRL/s3tWg7yZ8hv/jBbpuDV/eb0hqUfC"
   }
 ]

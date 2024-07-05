@@ -6,13 +6,12 @@ const router = Router()
 
 /* Rutas de usuarios */
 /*const fileVentas= await readFile('./data/ventas.json', 'utf-8') 
-const VentasItems = JSON.parse(fileVentas) */
+const VentasItems = JSON.parse(fileVentas)*/
 
-router.get('/porID/:id', (req, res) => {
+router.get('/porID/:id', async (req, res) => {
     const id = parseInt(req.params.id);
-
-    const result = get_ventas_byId(id)
-    /*const result = ventasItems.find(venta => venta.id === id);*/
+    const VentasItems = await leerJsonVentas();
+    const result = get_ventas_byId(id, VentasItems)
     if (result) {
         res.status(200).json(result);
     } else {
@@ -42,18 +41,23 @@ router.get('/ultimoIdVenta', async (req, res) => {
     }
 });
 
-router.post('/detalles', (req, res) => {
+router.post('/detalles', async (req, res) => {
     const id = parseInt(req.body.id);
 
-    const venta = get_ventas_byId(id)
-    if (venta) {
-        const detalles = {
-            total: venta.total,
-            productos: venta.productos
-        };
-        res.status(200).json(detalles);
-    } else {
-        res.status(400).json(`No se encontró la venta con el ID ${id}`);
+    try {
+        const ventasItems = await leerJsonVentas();
+        const venta = get_ventas_byId(id, ventasItems)
+        if (venta) {
+            const detalles = {
+                total: venta.total,
+                productos: venta.productos
+            };
+            res.status(200).json(detalles);
+        } else {
+            res.status(400).json(`No se encontró la venta con el ID ${id}`);
+        }
+    } catch (error) {
+        res.status(500).json({ error: 'Error al obtener los detalles de la venta' });
     }
 });
 
@@ -76,22 +80,22 @@ router.post('/nuevaVenta', async (req, res) => {
     }
 });
 
-router.put('/direccion/update/:id', (req, res) => {
+router.put('/direccion/update/:id', async (req, res) => {
     const Id = parseInt(req.params.id);
     const nuevaDireccion = req.body.dirección;
 
-    const index = VentasItems.findIndex(venta => venta.id === Id);
-    if (index !== -1) {
-        VentasItems[index].dirección = nuevaDireccion;
-
-        try {
-            writeFile('./data/ventas.json', JSON.stringify(VentasItems, null, 2));
+    try {
+        const ventasItems = await leerJsonVentas();
+        const index = ventasItems.findIndex(venta => venta.id === Id);
+        if (index !== -1) {
+            ventasItems[index].dirección = nuevaDireccion;
+            await writeFile('./data/ventas.json', JSON.stringify(ventasItems, null, 2));
             res.status(200).json(`La dirección del ID ${Id} se actualizó correctamente.`);
-        } catch (error) {
-            res.status(500).json('Error al guardar los cambios en la venta.');
+        } else {
+            res.status(400).json(`No se encontró la venta con el ID ${Id}`);
         }
-    } else {
-        res.status(400).json(`No se encontró la venta con el ID ${id}`);
+    } catch (error) {
+        res.status(500).json({ error: 'Error al actualizar la dirección de la venta' });
     }
 });
 

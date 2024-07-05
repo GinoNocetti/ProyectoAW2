@@ -1,25 +1,26 @@
 import { Router } from 'express'
 import { readFile, writeFile } from 'fs/promises'
-import { get_producto_byId } from '../utils/pruductos.js'
+import { get_producto_byId, leerJsonProductos } from '../utils/pruductos.js'
 
 const router = Router()
 
 /* Rutas de usuarios */
+/*const fileProductos = await readFile('./data/productos.json', 'utf-8') 
+const productosItems = JSON.parse(fileProductos)*/
 
-const fileProductos = await readFile('./data/productos.json', 'utf-8') 
-const productosItems = JSON.parse(fileProductos) 
-
-router.get('/todos', (req, res) => {
-    try{
+router.get('/todos', async (req, res) => {
+    try {
+        const productosItems = await leerJsonProductos();
         res.status(200).json(productosItems);
-    }catch(error){
-        res.status(500).json({ error: 'Error al leer los datos de los productos' })
+    } catch (error) {
+        res.status(500).json({ error: 'Error al leer los datos de los productos' });
     }
 });
 
 router.get('/categoria/:categoria', async (req, res) => {
     const categoria = req.params.categoria;
     try {
+        const productosItems = await leerJsonProductos();
         const productosFiltrados = productosItems.filter(producto => producto.categoria === categoria);
         res.status(200).json(productosFiltrados);
     } catch (error) {
@@ -27,10 +28,10 @@ router.get('/categoria/:categoria', async (req, res) => {
     }
 });
 
-router.get('/porID/:id', (req, res) => {
+router.get('/porID/:id', async (req, res) => {
     const id = parseInt(req.params.id);
-
-    const result = get_producto_byId(id);
+    const productosItems = await leerJsonProductos()
+    const result = get_producto_byId(id, productosItems);
     if (result) {
         res.status(200).json(result);
     } else {
@@ -38,37 +39,48 @@ router.get('/porID/:id', (req, res) => {
     }
 });
 
-router.get('/porPrecio/:precio', (req, res) => {
+router.get('/porPrecio/:precio', async (req, res) => {
     const precio = parseFloat(req.params.precio);
 
-    const results = productosItems.filter(producto => producto.precio === precio);
-    if (results.length > 0) {
-        res.status(200).json(results);
-    } else {
-        res.status(400).json(`No se encontraron productos con el precio ${precio}`);
+    try {
+        const productosItems = await leerJsonProductos();
+        const results = productosItems.filter(producto => producto.precio >= precio);
+        if (results.length > 0) {
+            res.status(200).json(results);
+        } else {
+            res.status(400).json(`No se encontraron productos con el precio ${precio}`);
+        }
+    } catch (error) {
+        res.status(500).json({ error: 'Error al obtener los productos por precio' });
     }
 });
 
-router.post('/BuscarProducto', (req, res) => {
+router.post('/BuscarProducto', async (req, res) => {
     const nombreProducto = req.body.nombre;
 
-    const producto = productosItems.find(e => e.nombre === nombreProducto);
-    if (producto) {
-        res.status(200).json(producto);
-    } else {
-        res.status(400).json(`Producto ${nombreProducto} no encontrado`);
+    try {
+        const productosItems = await leerJsonProductos();
+        const producto = productosItems.find(e => e.nombre === nombreProducto);
+        if (producto) {
+            res.status(200).json(producto);
+        } else {
+            res.status(400).json(`Producto ${nombreProducto} no encontrado`);
+        }
+    } catch (error) {
+        res.status(500).json({ error: 'Error al buscar el producto' });
     }
 });
 
-router.put('/precio/update/:productID', (req, res) => {
+router.put('/precio/update/:productID', async (req, res) => {
     const Id = parseInt(req.params.productID);
     const nuevoPrecio = req.body.precio;
 
     try {
+        const productosItems = await leerJsonProductos();
         const index = productosItems.findIndex(e => e.id === Id);
         if (index !== -1) {
             productosItems[index].precio = nuevoPrecio;
-            writeFile('./data/productos.json', JSON.stringify(productosItems, null, 2));
+            await writeFile('./data/productos.json', JSON.stringify(productosItems, null, 2));
             res.status(200).json('Precio actualizado correctamente.');
         } else {
             res.status(400).json('No se encontró el producto.');

@@ -12,8 +12,8 @@ dotenv.config()
 
 const app = express()
 
-const puerto = process.env.Puerto || 3000
-
+const puerto = process.env.Puerto || 5000 
+//Tanto en el archivo .env como la alternativa está puesto el puerto 5000 para evitar posibles errores
 app.use(cors());
 
 app.use(express.json())

@@ -504,7 +504,7 @@
     "id_usuario": 1,
     "fecha": "2024-06-27T02:36:58.956Z",
     "total": "14.99",
-    "dirección": "Prueba123",
+    "dirección": "Actualización de calle Prueba123",
     "productos": [
       {
         "id": "1",
@@ -512,6 +512,173 @@
         "talles": [
           {
             "talle": "s",
+            "cant": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "id_usuario": 0,
+    "fecha": "2024-07-04T22:47:39.975Z",
+    "total": "74.98",
+    "dirección": "calle de prueba 123",
+    "productos": [
+      {
+        "id": "1",
+        "cantidad": 1,
+        "talles": [
+          {
+            "talle": "s",
+            "cant": 1
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "cantidad": 1,
+        "talles": [
+          {
+            "talle": "m",
+            "cant": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "id_usuario": 6,
+    "fecha": "2024-07-04T22:48:48.704Z",
+    "total": "109.97",
+    "dirección": "Prueba 123",
+    "productos": [
+      {
+        "id": "1",
+        "cantidad": 1,
+        "talles": [
+          {
+            "talle": "s",
+            "cant": 1
+          }
+        ]
+      },
+      {
+        "id": "4",
+        "cantidad": 1,
+        "talles": [
+          {
+            "talle": "xs",
+            "cant": 1
+          }
+        ]
+      },
+      {
+        "id": "5",
+        "cantidad": 1,
+        "talles": [
+          {
+            "talle": "s",
+            "cant": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "id_usuario": 12,
+    "fecha": "2024-07-04T22:50:44.527Z",
+    "total": "234.94",
+    "dirección": "hola 1234",
+    "productos": [
+      {
+        "id": "4",
+        "cantidad": 1,
+        "talles": [
+          {
+            "talle": "xs",
+            "cant": 1
+          }
+        ]
+      },
+      {
+        "id": "5",
+        "cantidad": 5,
+        "talles": [
+          {
+            "talle": "s",
+            "cant": 2
+          },
+          {
+            "talle": "l",
+            "cant": 3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "id_usuario": 17,
+    "fecha": "2024-07-05T21:26:12.755Z",
+    "total": "1409.94",
+    "dirección": "Avenida Guemes 202",
+    "productos": [
+      {
+        "id": "9",
+        "cantidad": 2,
+        "talles": [
+          {
+            "talle": "xl",
+            "cant": 2
+          }
+        ]
+      },
+      {
+        "id": "20",
+        "cantidad": 3,
+        "talles": [
+          {
+            "talle": "l",
+            "cant": 2
+          },
+          {
+            "talle": "m",
+            "cant": 1
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "cantidad": 1,
+        "talles": [
+          {
+            "talle": "m",
+            "cant": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "id_usuario": 18,
+    "fecha": "2024-07-05T21:30:51.434Z",
+    "total": "1199.98",
+    "dirección": "Direccion de prueba",
+    "productos": [
+      {
+        "id": "9",
+        "cantidad": 2,
+        "talles": [
+          {
+            "talle": "xl",
+            "cant": 1
+          },
+          {
+            "talle": "l",
             "cant": 1
           }
         ]

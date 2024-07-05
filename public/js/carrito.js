@@ -7,14 +7,13 @@ const cantidadProductosElement = document.getElementById('cantidadProductos');
 
 const mostrarCarrito = (productos) => {
     carritoContainer.innerHTML = '';
-
     productos.forEach((producto, index) => {
         const { name, price, productId, image, quantity, talle } = producto;
         const cardHTML = CarritoCard({ image, name, price, quantity, productId, talle, index });
         carritoContainer.innerHTML += cardHTML;
     });
 
-    const totalPrecio = productos.reduce((total, producto) => total + (producto.price * 1 /*producto.quantity*/), 0);
+    const totalPrecio = productos.reduce((total, producto) => total + (producto.price * 1), 0);
     const cantidadProductos = productos.reduce((total, producto) => total + producto.quantity, 0);
 
     totalPrecioElement.textContent = `$${totalPrecio.toFixed(2)}`;
@@ -52,17 +51,12 @@ document.getElementById('comprarProductos').addEventListener('click', async () =
     const direccion = document.getElementById('direccion').value; 
     const cartData = JSON.parse(localStorage.getItem('cart')) || []; 
 
-    if (!userId) {
-        mostrarMensaje('Usuario no identificado. Por favor, inicia sesión.', '#e74c3c', 5000);
-        return;
-    }
-
     if (!direccion) {
         mostrarMensaje('Por favor, ingresa tu dirección', '#e74c3c', 2000);
         return;
     }
 
-    const total = cartData.reduce((acc, producto) => acc + (producto.price * 1 /*producto.quantity*/), 0);
+    const total = cartData.reduce((acc, producto) => acc + (producto.price * 1), 0);
 
     const productos = cartData.reduce((acc, producto) => { //acc = acumulador
         let prodIndex = acc.findIndex(p => p.id === producto.productId);
