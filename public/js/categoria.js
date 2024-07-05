@@ -43,14 +43,12 @@ window.addEventListener('load', () => {
             mostrarProductos(productos);
         });
     };
-  // Cargar todos los productos inicialmente
-  /*obtenerProductos().then(productos => {
+  obtenerProductos().then(productos => {
       mostrarProductos(productos);
   }).catch(error => {
       console.error('Error al obtener los productos:', error);
-  });*/
+  });
 
-  // Inicializar eventos
   inicializarEventos();
 });
 
