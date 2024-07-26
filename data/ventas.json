@@ -684,5 +684,62 @@
         ]
       }
     ]
+  },
+  {
+    "id": 26,
+    "fecha": "2024-07-19T23:13:02.945Z",
+    "total": "649.93",
+    "dirección": "hola123",
+    "productos": [
+      {
+        "id": "669705145842497cb13b7f04",
+        "cantidad": 5,
+        "talles": [
+          {
+            "talle": "s",
+            "cant": 5
+          }
+        ]
+      },
+      {
+        "id": "6697068442d1386c48b1d8b1",
+        "cantidad": 2,
+        "talles": [
+          {
+            "talle": "xs",
+            "cant": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "id_usuario": "669aeb7f9f677247433e9342",
+    "fecha": "2024-07-19T23:19:26.833Z",
+    "total": "149.97",
+    "dirección": "fgdfgdfgdfg",
+    "productos": [
+      {
+        "id": "669705145842497cb13b7f04",
+        "cantidad": 1,
+        "talles": [
+          {
+            "talle": "s",
+            "cant": 1
+          }
+        ]
+      },
+      {
+        "id": "6697066c42d1386c48b1d8af",
+        "cantidad": 2,
+        "talles": [
+          {
+            "talle": "m",
+            "cant": 2
+          }
+        ]
+      }
+    ]
   }
 ]

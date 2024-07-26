@@ -43,10 +43,10 @@ const eliminarProducto = (index) => {
 
 const cartDataFromLocalStorage = obtenerDatosLocalStorage();
 mostrarCarrito(cartDataFromLocalStorage);
-
+/* desde el json, funciona
 document.getElementById('comprarProductos').addEventListener('click', async () => {
     const userSession = JSON.parse(sessionStorage.getItem('user')); 
-    const userId = userSession?.Id;
+    const userId = userSession?.message?.id;
     const fecha = new Date().toISOString(); 
     const direccion = document.getElementById('direccion').value; 
     const cartData = JSON.parse(localStorage.getItem('cart')) || []; 
@@ -133,7 +133,88 @@ document.getElementById('comprarProductos').addEventListener('click', async () =
         console.error('Error al realizar la compra:', error);
         mostrarMensaje('Error al realizar la compra. Por favor, inténtalo de nuevo.', '#e74c3c', 5000);
     }
+});*/
+
+document.getElementById('comprarProductos').addEventListener('click', async () => {
+    const userSession = JSON.parse(sessionStorage.getItem('user')); 
+    const userId = userSession?.id_usuario;
+    //const userId = sessionStorage.getItem('id_usuario');
+    const fecha = new Date().toISOString(); 
+    const direccion = document.getElementById('direccion').value; 
+    const cartData = JSON.parse(localStorage.getItem('cart')) || []; 
+
+    if (!userId) {
+        alert('El ID del usuario no se encontró en el session storage.');
+        return;
+    }
+
+    if (!direccion) {
+        mostrarMensaje('Por favor, ingresa tu dirección', '#e74c3c', 2000);
+        return;
+    }
+
+    const total = cartData.reduce((acc, producto) => acc + (producto.price * 1), 0);
+
+    const productos = cartData.reduce((acc, producto) => { //acc = acumulador
+        let prodIndex = acc.findIndex(p => p.id === producto.productId);
+        if (prodIndex === -1) {
+            acc.push({
+                id: producto.productId,
+                cantidad: producto.quantity,
+                talles: [
+                    {
+                        talle: producto.talle,
+                        cant: producto.quantity
+                    }
+                ]
+            });
+        } else {
+            acc[prodIndex].cantidad += producto.quantity;
+            let talleIndex = acc[prodIndex].talles.findIndex(t => t.talle === producto.talle);
+            if (talleIndex === -1) {
+                acc[prodIndex].talles.push({
+                    talle: producto.talle,
+                    cant: producto.quantity
+                });
+            } else {
+                acc[prodIndex].talles[talleIndex].cant += producto.quantity;
+            }
+        }
+        return acc;
+    }, []);
+
+    const nuevaVenta = {
+        id_usuario: userId,
+        fecha: fecha,
+        total: total.toFixed(2),
+        dirección: direccion,
+        productos: productos
+    };
+
+    try {
+        const response = await fetch('http://localhost:5000/ventas/nuevaVentaBD', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(nuevaVenta)
+        });
+
+        if (response.ok) {
+            mostrarMensaje('Compra realizada con éxito', '#3498db', 5000);
+            localStorage.removeItem('cart');
+            document.getElementById('direccion').value = '';
+            mostrarCarrito([]);
+        } else {
+            const errorData = await response.json();
+            alert('Error al realizar la compra: ' + errorData.mensaje);
+        }
+    } catch (error) {
+        console.error('Error al realizar la compra:', error);
+        mostrarMensaje('Error al realizar la compra. Por favor, inténtalo de nuevo.', '#e74c3c', 5000);
+    }
 });
+
 
 document.getElementById('eliminarProductos').addEventListener('click', async () => {
     localStorage.removeItem('cart');

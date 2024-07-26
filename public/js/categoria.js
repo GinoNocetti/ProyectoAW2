@@ -3,7 +3,8 @@ import { addToCart } from '../utils/cart.controller.js';
 import { mostrarMensaje } from '../components/mensaje.js';
 import { obtenerProductos, obtenerProductosPorCategoria } from './api.js';
 
-window.addEventListener('load', () => {
+/*Desde los json*/
+/*window.addEventListener('load', () => {
     mostrarMensaje('Las secciones de productos están deshabilitadas temporalmente.', '#f1c40f', 2000)
 
     const mostrarProductos = (productos) => {
@@ -50,6 +51,57 @@ window.addEventListener('load', () => {
   });
 
   inicializarEventos();
+});*/
+
+/*Función para la BD*/
+window.addEventListener('load', () => {
+    mostrarMensaje('Las secciones de productos están deshabilitadas temporalmente.', '#f1c40f', 2000);
+
+    const mostrarProductos = (productos) => {
+        const contenedor = document.getElementById('productos-container');
+        contenedor.innerHTML = '';
+        productos.forEach(producto => {
+            const cardHtml = CustomCard({
+                img: producto.imagen,
+                title: producto.nombre,
+                desc: producto.desc,
+                precio: producto.precio,
+                productId: producto._id, 
+                talles: producto.talle
+            });
+            contenedor.innerHTML += cardHtml;
+        });
+    };
+
+    const inicializarEventos = () => {
+        document.getElementById('btnTodos').addEventListener('click', async () => {
+            const productos = await obtenerProductos();
+            mostrarProductos(productos);
+        });
+
+        document.getElementById('btnPrendasSuperiores').addEventListener('click', async () => {
+            const productos = await obtenerProductosPorCategoria('669704975842497cb13b7efb');
+            mostrarProductos(productos);
+        });
+
+        document.getElementById('btnPrendasInferiores').addEventListener('click', async () => {
+            const productos = await obtenerProductosPorCategoria('6697049e5842497cb13b7eff');
+            mostrarProductos(productos);
+        });
+
+        document.getElementById('btnJoyeria').addEventListener('click', async () => {
+            const productos = await obtenerProductosPorCategoria('669704aa5842497cb13b7f01');
+            mostrarProductos(productos);
+        });
+    };
+
+    obtenerProductos().then(productos => {
+        mostrarProductos(productos);
+    }).catch(error => {
+        console.error('Error al obtener los productos:', error);
+    });
+
+    inicializarEventos();
 });
 
 document.getElementById('productos-container').addEventListener('click', (event) => {

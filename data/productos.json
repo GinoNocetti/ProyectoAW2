@@ -85,7 +85,7 @@
     "nombre": "Collar de plata con colgante de corazón",
     "desc": "Collar de plata con colgante de corazón, ideal para regalos.",
     "precio": 29.99,
-    "categoria": "Joyería",
+    "categoria": "Joyeria",
     "imagen": "../assets/Joyeria.jpeg",
     "talle": [
       "s",
@@ -97,7 +97,7 @@
     "nombre": "Pulsera de cuero trenzado",
     "desc": "Pulsera de cuero trenzado con cierre magnético.",
     "precio": 19.99,
-    "categoria": "Joyería",
+    "categoria": "Joyeria",
     "imagen": "../assets/Joyeria.jpeg",
     "talle": [
       "xs",
@@ -111,7 +111,7 @@
     "nombre": "Anillo de compromiso con diamante",
     "desc": "Anillo de compromiso con diamante de corte princesa.",
     "precio": 599.99,
-    "categoria": "Joyería",
+    "categoria": "Joyeria",
     "imagen": "../assets/Joyeria.jpeg",
     "talle": [
       "l",
@@ -149,7 +149,7 @@
     "nombre": "Collar de perlas de agua dulce",
     "desc": "Collar de perlas de agua dulce con cierre de plata.",
     "precio": 79.99,
-    "categoria": "Joyería",
+    "categoria": "Joyeria",
     "imagen": "../assets/Joyeria.jpeg",
     "talle": [
       "xs",
@@ -189,7 +189,7 @@
     "nombre": "Aretes de oro con diamantes",
     "desc": "Aretes de oro con diamantes brillantes en engarces de cuatro garras.",
     "precio": 499.99,
-    "categoria": "Joyería",
+    "categoria": "Joyeria",
     "imagen": "../assets/Joyeria.jpeg",
     "talle": [
       "s",
@@ -229,7 +229,7 @@
     "nombre": "Collar de cadena de plata",
     "desc": "Collar de cadena de plata clásico para uso diario.",
     "precio": 49.99,
-    "categoria": "Joyería",
+    "categoria": "Joyeria",
     "imagen": "../assets/Joyeria.jpeg",
     "talle": [
       "xs",

@@ -7,6 +7,7 @@ import cors from 'cors';
 import usuarioRouter from './routes/usuarios.routes.js'
 import productoRouter from './routes/productos.routes.js'
 import ventasRouter from './routes/ventas.routes.js'
+import categoriasRouter from './routes/categoria.routes.js'
 
 dotenv.config()
 
@@ -29,6 +30,7 @@ app.use(express.static('./public/'))
 app.use('/usuarios', usuarioRouter)
 app.use('/productos', productoRouter)
 app.use('/ventas', ventasRouter)
+app.use('/categorias', categoriasRouter)
 
 /* Mensajes de prueba */
 app.get(`/`, (req, res)=>{

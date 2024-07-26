@@ -2,6 +2,7 @@ import { Router } from 'express'
 import { readFile, writeFile } from 'fs/promises'
 import { get_user_byId, leerJsonUsuarios} from '../utils/usuarios.js'
 import { leerJsonVentas } from '../utils/ventas.js'
+import { loginUsuario, createUsuario, findById, findByEmail, findAllUsuarios, actualizarApellidoUsuario, borrarUsuarioYVentas } from '../db/models/usuarios.models.js';
 import bcrypt from 'bcrypt';
 
 const router = Router()
@@ -13,6 +14,110 @@ const usuariosItems = JSON.parse(fileUsuarios)
 const fileVentas= await readFile('./data/ventas.json', 'utf-8') 
 const VentasItems = JSON.parse(fileVentas) */
 
+/*Endpoints desde la BD*/
+
+router.get('/wake-up', (req, res) => {
+    res.status(200).send('Server is awake');
+});
+
+//PRIMER INTENTO
+router.post('/create', async (req, res) => {
+    const { nombre, apellido, email, contraseña } = req.body;
+    try {
+        const result = await createUsuario({ nombre, apellido, email, contraseña });
+        res.status(201).json(result);
+    } catch (error) {
+        res.status(400).json({ status: false, message: 'Error al crear usuario' });
+    }
+});
+
+
+/*router.post('/loginBD', async (req, res) => {
+    const { email, contraseña } = req.body;
+    try {
+        const userData = await loginUsuario(email, contraseña);
+        res.status(200).json(userData);
+    } catch (error) {
+        res.status(401).json({ message: error.message });
+    }
+});*/
+
+router.post('/loginDB', async (req, res) => {
+    const { email, contraseña } = req.body;
+    try {
+        const result = await loginUsuario({ email, contraseña });
+        res.status(200).json(result);
+    } catch (error) {
+        res.status(401).json({ status: false, message: error.message });
+    }
+});
+
+router.get('/findAll', async (req, res) => {
+    try {
+        const result = await findAllUsuarios();
+        res.status(200).json(result);
+    } catch (error) {
+        res.status(400).json({ error: 'Error al obtener los usuarios' });
+    }
+});
+
+router.get('/findByEmail/:email', async (req, res) => {
+    const email = req.params.email;
+
+    try {
+        const result = await findByEmail(email);
+        res.status(200).json(result);
+    } catch (error) {
+        res.status(400).json({ error: 'Error al encontrar el usuario' });
+    }
+});
+
+router.get('/buscarPorId/:id', async (req, res) => {
+    const { id } = req.params;
+    try {
+        const user = await findById(id);
+        if (user) {
+            res.status(200).json(user);
+        } else {
+            res.status(404).json({ message: 'Usuario no encontrado' });
+        }
+    } catch (error) {
+        res.status(400).json({ status: false, message: 'Error al buscar usuario por ID' });
+    }
+});
+
+router.put('/actualizarApellido/:id', async (req, res) => {
+    const { id } = req.params;
+    const { apellido } = req.body;
+
+    try {
+        const usuarioActualizado = await actualizarApellidoUsuario(id, apellido);
+        if (usuarioActualizado) {
+            res.status(200).json({ message: 'Apellido actualizado con éxito', usuario: usuarioActualizado });
+        } else {
+            res.status(404).json({ message: 'Usuario no encontrado' });
+        }
+    } catch (error) {
+        res.status(500).json({ message: 'Error al actualizar el apellido del usuario', error: error.message });
+    }
+});
+
+router.delete('/borrarUsuarioBD/:id', async (req, res) => {
+    const { id } = req.params;
+
+    try {
+        const usuarioEliminado = await borrarUsuarioYVentas(id);
+        if (usuarioEliminado) {
+            res.status(200).json({ message: 'Usuario y sus ventas asociadas fueron eliminados correctamente' });
+        } else {
+            res.status(404).json({ message: 'No se encontró al usuario' });
+        }
+    } catch (error) {
+        res.status(500).json({ message: 'Surgió un error al eliminar al usuario y sus ventas', error: error.message });
+    }
+});
+
+/*Endpoints desde el json*/
 const obtenerSiguienteId = async () => {
     const usuariosItems = await leerJsonUsuarios();
     const maxId = usuariosItems.reduce((max, user) => (user.Id > max ? user.Id : max), 0);

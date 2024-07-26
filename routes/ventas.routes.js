@@ -1,6 +1,7 @@
 import { Router } from 'express'
 import { readFile, writeFile } from 'fs/promises'
 import { get_ventas_byId, leerJsonVentas } from '../utils/ventas.js'
+import { createVenta, getVentaById, getVentasByUsuario, obtenerDetallesVenta, actualizarDireccionVenta } from '../db/models/ventas.models.js'
 
 const router = Router()
 
@@ -8,6 +9,71 @@ const router = Router()
 /*const fileVentas= await readFile('./data/ventas.json', 'utf-8') 
 const VentasItems = JSON.parse(fileVentas)*/
 
+/*Endpoints de MongoDB*/
+router.post('/nuevaVentaBD', async (req, res) => {
+    const nuevaVenta = req.body;
+
+    try {
+        const venta = await createVenta(nuevaVenta);
+        res.status(201).json({ mensaje: 'Venta agregada exitosamente', venta });
+    } catch (error) {
+        res.status(500).json({ mensaje: 'Error al agregar la venta', error });
+    }
+});
+
+router.get('/ventas/:id', async (req, res) => {
+    const { id } = req.params;
+
+    try {
+        const venta = await getVentaById(id);
+        res.status(200).json(venta);
+    } catch (error) {
+        res.status(500).json({ mensaje: 'Error al obtener la venta', error: error.message });
+    }
+});
+
+router.get('/PorIDusuario/:id_usuario', async (req, res) => {
+    const { id_usuario } = req.params;
+
+    try {
+        const ventas = await getVentasByUsuario(id_usuario);
+        res.status(200).json(ventas);
+    } catch (error) {
+        res.status(500).json({ mensaje: 'Error al obtener las ventas del usuario', error: error.message });
+    }
+});
+
+router.post('/detallesDB', async (req, res) => {
+    const { id } = req.body;
+
+    try {
+        const detalles = await obtenerDetallesVenta(id);
+        res.status(200).json(detalles);
+    } catch (error) {
+        res.status(400).json({ message: `No se encontró la venta con el ID ${id}`, error: error.message });
+    }
+});
+
+router.put('/direccion/updateDB/:id', async (req, res) => {
+    const ventaId = req.params.id;
+    const nuevaDireccion = req.body.dirección;
+
+    try {
+        const ventaActualizada = await actualizarDireccionVenta(ventaId, nuevaDireccion);
+        if (ventaActualizada) {
+            console.log(`La dirección de la venta con el ID ${ventaId} se actualizó correctamente.`);
+            res.status(200).json(`La dirección de la venta con el ID ${ventaId} se actualizó correctamente.`);
+        } else {
+            console.log(`No se encontró la venta con el ID ${ventaId}`);
+            res.status(400).json(`No se encontró la venta con el ID ${ventaId}`);
+        }
+    } catch (error) {
+        console.error('Error al actualizar la dirección de la venta:', error);
+        res.status(500).json({ error: 'Error al actualizar la dirección de la venta' });
+    }
+});
+
+/*Endpoints de los JSON*/
 router.get('/porID/:id', async (req, res) => {
     const id = parseInt(req.params.id);
     const VentasItems = await leerJsonVentas();

@@ -1,128 +1,128 @@
 [
   {
     "Id": 0,
-    "Nombre": "Gino",
-    "Apellido": "Nocetti",
-    "Email": "ginonocetti@gmail.com",
-    "Contraseña": "gino123"
+    "nombre": "Gino",
+    "apellido": "Nocetti",
+    "email": "ginonocetti@gmail.com",
+    "contraseña": "gino123"
   },
   {
     "Id": 2,
-    "Nombre": "Emma",
-    "Apellido": "Clark",
-    "Email": "emma.johnson@gmail.com",
-    "Contraseña": "EmmaLion456"
+    "nombre": "Emma",
+    "apellido": "Clark",
+    "email": "emma.johnson@gmail.com",
+    "contraseña": "EmmaLion456"
   },
   {
     "Id": 3,
-    "Nombre": "Michael",
-    "Apellido": "Williams",
-    "Email": "michael.williams@hotmail.com",
-    "Contraseña": "MichaelTiger789"
+    "nombre": "Michael",
+    "apellido": "Williams",
+    "email": "michael.williams@hotmail.com",
+    "contraseña": "MichaelTiger789"
   },
   {
     "Id": 4,
-    "Nombre": "Emily",
-    "Apellido": "Jones",
-    "Email": "emily.jones@hotmail.com",
-    "Contraseña": "EmilyBear123"
+    "nombre": "Emily",
+    "apellido": "Jones",
+    "email": "emily.jones@hotmail.com",
+    "contraseña": "EmilyBear123"
   },
   {
     "Id": 5,
-    "Nombre": "James",
-    "Apellido": "Brown",
-    "Email": "james.brown@gmail.com",
-    "Contraseña": "JamesWolf456"
+    "nombre": "James",
+    "apellido": "Brown",
+    "email": "james.brown@gmail.com",
+    "contraseña": "JamesWolf456"
   },
   {
     "Id": 6,
-    "Nombre": "Olivia",
-    "Apellido": "Davis",
-    "Email": "olivia.davis@hotmail.com",
-    "Contraseña": "OliviaEagle789"
+    "nombre": "Olivia",
+    "apellido": "Davis",
+    "email": "olivia.davis@hotmail.com",
+    "contraseña": "OliviaEagle789"
   },
   {
     "Id": 7,
-    "Nombre": "William",
-    "Apellido": "Miller",
-    "Email": "william.miller@gmail.com",
-    "Contraseña": "WilliamTurtle123"
+    "nombre": "William",
+    "apellido": "Miller",
+    "email": "william.miller@gmail.com",
+    "contraseña": "WilliamTurtle123"
   },
   {
     "Id": 8,
-    "Nombre": "Sophia",
-    "Apellido": "Wilson",
-    "Email": "sophia.wilson@hotmail.com",
-    "Contraseña": "SophiaDolphin456"
+    "nombre": "Sophia",
+    "apellido": "Wilson",
+    "email": "sophia.wilson@hotmail.com",
+    "contraseña": "SophiaDolphin456"
   },
   {
     "Id": 9,
-    "Nombre": "Alexander",
-    "Apellido": "Taylor",
-    "Email": "alexander.taylor@gmail.com",
-    "Contraseña": "AlexanderLion789"
+    "nombre": "Alexander",
+    "apellido": "Taylor",
+    "email": "alexander.taylor@gmail.com",
+    "contraseña": "AlexanderLion789"
   },
   {
     "Id": 10,
-    "Nombre": "Ava",
-    "Apellido": "Anderson",
-    "Email": "ava.anderson@gmail.com",
-    "Contraseña": "AvaMonkey123"
+    "nombre": "Ava",
+    "apellido": "Anderson",
+    "email": "ava.anderson@gmail.com",
+    "contraseña": "AvaMonkey123"
   },
   {
     "Id": 11,
-    "Nombre": "Daniel",
-    "Apellido": "Thomas",
-    "Email": "daniel.thomas@hotmail.com",
-    "Contraseña": "DanielSnake456"
+    "nombre": "Daniel",
+    "apellido": "Thomas",
+    "email": "daniel.thomas@hotmail.com",
+    "contraseña": "DanielSnake456"
   },
   {
     "Id": 12,
-    "Nombre": "Mia",
-    "Apellido": "Martinez",
-    "Email": "mia.martinez@hotmail.com",
-    "Contraseña": "MiaElephant789"
+    "nombre": "Mia",
+    "apellido": "Martinez",
+    "email": "mia.martinez@hotmail.com",
+    "contraseña": "MiaElephant789"
   },
   {
     "Id": 13,
-    "Nombre": "Matthew",
-    "Apellido": "Hernandez",
-    "Email": "matthew.hernandez@hotmail.com",
-    "Contraseña": "MatthewTiger123"
+    "nombre": "Matthew",
+    "apellido": "Hernandez",
+    "email": "matthew.hernandez@hotmail.com",
+    "contraseña": "MatthewTiger123"
   },
   {
     "Id": 14,
-    "Nombre": "Juancho",
-    "Apellido": "Peralta",
-    "Email": "JuanchoPeralta123@gmail.com",
-    "Contraseña": "Juancho123"
+    "nombre": "Juancho",
+    "apellido": "Peralta",
+    "email": "JuanchoPeralta123@gmail.com",
+    "contraseña": "Juancho123"
   },
   {
     "Id": 15,
-    "Nombre": "Juan",
-    "Apellido": "Pérez",
-    "Email": "juan.perez@example.com",
-    "Contraseña": "$2b$10$vfXc.M.guSkqBp6MCw5NluBAWO.c6yedFtBbEFjnQF3exTYFYw.2a"
+    "nombre": "Juan",
+    "apellido": "Pérez",
+    "email": "juan.perez@example.com",
+    "contraseña": "$2b$10$vfXc.M.guSkqBp6MCw5NluBAWO.c6yedFtBbEFjnQF3exTYFYw.2a"
   },
   {
     "Id": 16,
-    "Nombre": "María",
-    "Apellido": "González",
-    "Email": "maria.gonzalez@example.com",
-    "Contraseña": "$2b$10$482r9awQVIWI7xrs4ZEbFekWVgfeSOPZ2ST.Jd14MvrbDpsSvInv2"
+    "nombre": "María",
+    "apellido": "González",
+    "email": "maria.gonzalez@example.com",
+    "contraseña": "$2b$10$482r9awQVIWI7xrs4ZEbFekWVgfeSOPZ2ST.Jd14MvrbDpsSvInv2"
   },
   {
     "Id": 17,
-    "Nombre": "Emilia",
-    "Apellido": "Andrada",
-    "Email": "Emilia_Andrada@hotmail.com",
-    "Contraseña": "$2b$10$7iqKX5C58TUZ1bZBalqeP.FEvVhT6rNDDSu3pxpw5Oexfu1KQzGM."
+    "nombre": "Emilia",
+    "apellido": "Andrada",
+    "email": "Emilia_Andrada@hotmail.com",
+    "contraseña": "$2b$10$7iqKX5C58TUZ1bZBalqeP.FEvVhT6rNDDSu3pxpw5Oexfu1KQzGM."
   },
   {
     "Id": 18,
-    "Nombre": "Gonzalo",
-    "Apellido": "Pereyra",
-    "Email": "gonzalopereyna123@gmail.com",
-    "Contraseña": "$2b$10$/g0BzvGPxj3s91LuYNr6AuRL/s3tWg7yZ8hv/jBbpuDV/eb0hqUfC"
+    "nombre": "Gonzalo",
+    "apellido": "Pereyra",
+    "email": "gonzalopereyna123@gmail.com",
+    "contraseña": "$2b$10$/g0BzvGPxj3s91LuYNr6AuRL/s3tWg7yZ8hv/jBbpuDV/eb0hqUfC"
   }
 ]

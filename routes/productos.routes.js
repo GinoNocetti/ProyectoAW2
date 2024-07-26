@@ -1,6 +1,7 @@
 import { Router } from 'express'
 import { readFile, writeFile } from 'fs/promises'
 import { get_producto_byId, leerJsonProductos } from '../utils/pruductos.js'
+import { createProd, findAll, findById, findByCategory, buscarProductoPorNombre, actualizarPrecioProducto } from '../db/models/productos.models.js'
 
 const router = Router()
 
@@ -8,6 +9,81 @@ const router = Router()
 /*const fileProductos = await readFile('./data/productos.json', 'utf-8') 
 const productosItems = JSON.parse(fileProductos)*/
 
+/*EndPoints desde MongoDB*/
+router.post('/NuevoProdDB', async (req, res) => {
+    const { nombre, desc, precio, categoria, imagen, talle } = req.body;
+
+    try {
+        const result = await createProd({ nombre, desc, precio, categoria, imagen, talle });
+        res.status(200).json(result);
+    } catch (error) {
+        console.error('Error al crear el producto:', error);
+        res.status(400).json({ message: 'Error al crear el producto' });
+    }
+});
+
+router.get('/todosDB', async (req, res) => {
+    try {
+        const result = await findAll();
+        res.status(200).json(result);
+    } catch (error) {
+        res.status(400).json()
+    }
+});
+
+router.get('/ByIdDB/:id', async (req, res) => {
+    const id = req.params.id
+    try {
+        const result = await findById(id);
+        res.status(200).json(result);
+    } catch (error) {
+        res.status(400).json()
+    }
+});
+
+router.get('/PorCategoriaDB/:categoria', async (req, res) => {
+    const categoria = req.params.categoria
+    try {
+        const result = await findByCategory(categoria);
+        res.status(200).json(result);
+    } catch (error) {
+        res.status(400).json()
+    }
+});
+
+router.post('/BuscarProductoBD', async (req, res) => {
+    const { nombre } = req.body;
+
+    try {
+        const producto = await buscarProductoPorNombre(nombre);
+        if (producto) {
+            res.status(200).json(producto);
+        } else {
+            res.status(404).json({ message: `Producto ${nombre} no encontrado` });
+        }
+    } catch (error) {
+        res.status(500).json({ message: 'Error al buscar el producto', error: error.message });
+    }
+});
+
+
+router.put('/precio/updateDB/:productId', async (req, res) => {
+    const productId = req.params.productId;
+    const { precio } = req.body;
+
+    try {
+        const productoActualizado = await actualizarPrecioProducto(productId, precio);
+        if (productoActualizado) {
+            res.status(200).json('Precio actualizado correctamente.');
+        } else {
+            res.status(404).json('No se encontró el producto.');
+        }
+    } catch (error) {
+        res.status(500).json({ message: 'Surgió un error al actualizar el precio.', error: error.message });
+    }
+});
+
+/*EndPoints desde json*/
 router.get('/todos', async (req, res) => {
     try {
         const productosItems = await leerJsonProductos();
